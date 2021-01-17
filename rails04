@@ -1,0 +1,14 @@
+[課題]　Rails 04
+
+1.パスワードの文字数を8~32文字のみ可能にしてください
+validates :password, presence: true, length: { in: 8..32 } ,format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+2.パスワードをアルファベット、数字の混合のみ可能にしてください
+validates :password_confirmation, presence: true, length: { in: 8..32 } ,format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+
+3.メールアドレスの正規表現を追加してください
+validates :email, presence: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,})\z/i }
+
+4.名前の長さに制限を追加する
+validates :name, presence: true, length: { maximum: 15}
+  

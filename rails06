@@ -1,0 +1,19 @@
+[課題]　Rails 06
+
+１．投稿できる写真に制限をかけてください
+①画像タイプ(jpg、jpeg、pngの3種類のみ)
+  def extension_whitelist
+    %w(jpg jpeg png)
+  end
+  
+②サイズを10M以下
+  def size_range
+    1..10.megabytes
+  end
+  
+２．ログインしていない場合は投稿ボタンを非表示にする
+
+<% if logged_in? %>
+  <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+  <% end %>
+<% end %>
